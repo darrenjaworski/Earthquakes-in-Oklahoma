@@ -1,0 +1,63 @@
+/* Welcome to Compass.
+ * In this file you should write your main styles. (or centralize your imports)
+ * Import this file using the following HTML or equivalent:
+ * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
+@import "compass/css3";
+
+/*Start SUSY Grid */
+@import "susy";
+$total-columns 	:	12;
+$column-width	:	5em;
+$gutter-width	:	1.5em;
+$grid-padding	:	2em; 
+/* End SUSY Grid */
+
+@import "partials/normalize"; 
+@import "partials/utilities";
+
+$background-color: #000623;
+$light-contrast: #F0E3C0;
+$county-fill: #28475C;
+$hover-contrast: #4A6C74;
+$earthquake: #8BA693;
+
+.container {
+	@include container;
+}
+
+.map {
+	@include span-columns(12 omega,12);
+}
+
+html {
+	font-family: 'Helvetica Neue';
+	background-color: $background-color;
+	color: $light-contrast;
+	letter-spacing: 2px;
+}
+
+h1, h2, h3 {
+	font-weight: 100;
+}
+
+p {
+	font-weight: normal;
+}
+
+.county {
+	fill: $county-fill;
+	stroke: $light-contrast;
+	&:hover {
+		fill: $hover-contrast;
+	}
+}
+
+.earthquake {
+	fill: $earthquake;
+	opacity: .3;
+}
+
+.year {
+	fill: $light-contrast;
+	font: 100 140px "Helvetica Neue"
+}
