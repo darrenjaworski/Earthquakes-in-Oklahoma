@@ -9,17 +9,19 @@
 $total-columns 	:	12;
 $column-width	:	5em;
 $gutter-width	:	1.5em;
-$grid-padding	:	2em; 
+$grid-padding	:	2em;
 /* End SUSY Grid */
 
-@import "partials/normalize"; 
+//@import "partials/normalize";
 @import "partials/utilities";
 
 $background-color: #000623;
 $light-contrast: #F0E3C0;
-$county-fill: #28475C;
-$hover-contrast: #4A6C74;
-$earthquake: #8BA693;
+$county-fill: #4A6C74;
+$hover-contrast: #28475C;
+$earthquake: #FFED5D;
+$faultline: #FFF2C1;
+$well: #D95F47;
 
 .container {
 	@include container;
@@ -30,10 +32,14 @@ $earthquake: #8BA693;
 }
 
 html {
-	font-family: 'Helvetica Neue';
+	font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
 	background-color: $background-color;
 	color: $light-contrast;
 	letter-spacing: 2px;
+}
+
+a {
+  color: $light-contrast;
 }
 
 h1, h2, h3 {
@@ -60,4 +66,15 @@ p {
 .year {
 	fill: $light-contrast;
 	font: 100 140px "Helvetica Neue"
+}
+
+.faultline {
+  fill: none;
+  stroke: $faultline;
+  opacity: .3;
+}
+
+.well {
+  fill: $well;
+  opacity: .3;
 }
