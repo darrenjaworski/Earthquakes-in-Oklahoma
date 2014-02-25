@@ -23,6 +23,15 @@ $earthquake: #FFED5D;
 $faultline: #FFF2C1;
 $well: #D95F47;
 
+@font-face	{
+	font-family: icomoon;
+	src: url('../fonts/icomoon.eot');
+	src: url('../fonts/icomoon.eot?#iefix') format('embedded-opentype'),
+		url('../fonts/icomoon.ttf') format('truetype'),
+		url('../fonts/icomoon.woff') format('woff'),
+		url('../fonts/icomoon.svg') format('svg');
+}
+
 .container {
 	@include container;
 }
@@ -36,6 +45,10 @@ html {
 	background-color: $background-color;
 	color: $light-contrast;
 	letter-spacing: 2px;
+}
+h1 {
+  font-size: 2em;
+  text-align: center;
 }
 
 a {
@@ -63,9 +76,21 @@ p {
 	opacity: .3;
 }
 
-.year {
-	fill: $light-contrast;
-	font: 100 140px "Helvetica Neue"
+.timelinecontrol {
+  font-family: 'icomoon';
+  display: inline;
+  &:after {
+    content: "p";
+    font-size: 6em;
+  }
+}
+
+.yearvalue {
+	color: $light-contrast;
+	font: 100 10em "Helvetica Neue";
+  @media (max-width: 40em) {
+    font-size: 6em;
+  }
 }
 
 .faultline {
@@ -77,4 +102,45 @@ p {
 .well {
   fill: $well;
   opacity: .3;
+}
+
+.interactiveoptions {
+  @include span-columns(4,12);
+  + .interactiveoptions {
+    @include span-columns(8 omega,12);
+    @media (max-width: 40em) {
+      @include span-columns(12 omega, 12);
+    }
+  }
+  @media (max-width: 40em) {
+    @include span-columns(12 omega, 12);
+  }
+  > div {
+    padding-bottom: .5em;
+  }
+  input {
+    @include appearance(none);
+    outline: none;
+  }
+  input[type=range] {
+    width: 50%;
+    height: 1px;
+    background-color: $light-contrast;
+    @media (max-width: 40em) {
+      width: 100%;
+    }
+  }
+  input[type=checkbox] {
+    border: 1px solid $light-contrast;
+    height: 15px;
+    width: 15px;
+    margin: 0;
+    &:checked {
+      background-color: $light-contrast;
+    }
+  }
+}
+
+.accessible {
+  @include accessible_hidden;
 }
