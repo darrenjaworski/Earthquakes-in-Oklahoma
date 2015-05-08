@@ -13,10 +13,11 @@
 	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0">
 
 	<link rel="stylesheet" href="assets/css/screen.css">
+
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 	<script src="http://d3js.org/d3.v3.min.js"></script>
 	<script src="http://d3js.org/topojson.v1.min.js"></script>
-	<script src="assets/js/scripts.min.js"></script>
-	<script src="assets/js/script.js"></script>
+
 </head>
 <body>
 <!--[if lt IE 7]><p class="chromeframe">You are using an outdated browser. <a href="http://browsehappy.com/">Upgrade your browser today</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to better experience this site.</p><![endif]-->
@@ -42,31 +43,11 @@
 
             <p>The map will be more and more interactive as I continue to build it. I'll add filtering options, charts, and a timeline for futher analysis. Click on a counties to zoom the map. Please tell me what you think below.</p>
 
-            <div class="interactiveoptions">
-                <div>
-                    <input type="checkbox" id="earthquakecheck" name="earthquakecheck" data-target="earthquakes" checked>
-                    <label for="earthquakecheck">Earthquakes</label>
-                </div>
-                <div>
-                    <input type="checkbox" id="wellscheck" name="wellscheck" data-target="wells" checked>
-                    <label for="wellscheck">Injection Wells</label>
-                </div>
-                <div>
-                    <input type="checkbox" id="faultlinescheck" name="faultlinescheck" data-target="faultlines" checked>
-                    <label for="faultlinescheck">Faultlines</label>
-                </div>
-            </div>
-
-            <div class="interactiveoptions">
-                <div>
-                    <input id="yearrange" type="range">
-                    <label class="accessible" for="yearrange">Year</label>
-                </div>
-                <div>
-                    <div class="timelinecontrol"></div>
-                    <span class="yearvalue"></span>
-                </div>
-            </div>
+            <ul>
+            	<li class="one"><button>one</button></li>
+            	<li class="two"><button>two</button></li>
+            	<li class="three"><button>three</button></li>
+            </ul>
 
 			<div class="map">
 
@@ -74,7 +55,7 @@
 
 		</article>
 
-        <article class="container">
+        <!-- <article class="container">
             <div id="disqus_thread"></div>
             <script type="text/javascript">
                 /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
@@ -89,7 +70,7 @@
             </script>
             <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
             <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
-        <article>
+        <article> -->
 
 	</section>
 
@@ -99,6 +80,7 @@
 
 
 	</footer>
+	<script src="assets/js/script.js"></script>
 	<script>
         var _gaq=[['_setAccount','UA-40963108-1'],['_trackPageview']];
         (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];

@@ -5,14 +5,14 @@
 @import "compass/css3";
 
 /*Start SUSY Grid */
-@import "susy";
+@import "susyone";
 $total-columns 	:	12;
 $column-width	:	5em;
 $gutter-width	:	1.5em;
 $grid-padding	:	2em;
 /* End SUSY Grid */
 
-//@import "partials/normalize";
+@import "partials/normalize";
 @import "partials/utilities";
 
 $background-color: #000623;
@@ -63,25 +63,17 @@ p {
 	font-weight: normal;
 }
 
-.county {
-	fill: $county-fill;
-	stroke: $light-contrast;
-	&:hover {
-		fill: $hover-contrast;
-	}
-}
-
-.earthquake {
-	fill: $earthquake;
-	opacity: .3;
-}
-
 .timelinecontrol {
   font-family: 'icomoon';
   display: inline;
+  font-size: 6em;
+  &.play {
+    &:after {
+      content: "p";
+    }
+  }
   &:after {
-    content: "p";
-    font-size: 6em;
+    content: "a";
   }
 }
 
@@ -93,16 +85,43 @@ p {
   }
 }
 
+.county {
+	fill: $county-fill;
+	stroke: $light-contrast;
+	&.hover {
+		fill: $hover-contrast;
+	}
+}
+
+.earthquake {
+	fill: $earthquake;
+}
+
 .faultline {
   fill: none;
   stroke: $faultline;
-  opacity: .3;
 }
 
 .well {
   fill: $well;
-  opacity: .3;
 }
+
+ul {
+	li {
+		button {
+			@include appearance(none);
+			padding: 2em;
+			margin: .25em;
+			border: none;
+			background: red;
+			&.active {
+				background: steelblue;
+			}
+		}
+	}
+}
+
+
 
 .interactiveoptions {
   @include span-columns(4,12);

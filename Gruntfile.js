@@ -8,16 +8,20 @@ module.exports = function(grunt) {
         files: {
           'assets/js/scripts.min.js': [
           'assets/js/lib/*.js',
-          //'assets/js/_*.js'
+          'assets/js/script.js'
 		  ]
 		}
-	  }		  
+        },
+        options : {
+            sourceMap: true
+        }
 	},
     sass: {
 	  dist: {
 	    options: {
 	      style: 'compressed',
 	      compass: 'true',
+          require: 'Susy',
 	      sourcemap: false
 	    },
 	    files: {
@@ -38,8 +42,16 @@ module.exports = function(grunt) {
 		],
 		tasks: [
 		  'sass'
-		], 
-	  }
+		],
+    }//,
+    // uglify: {
+    //     files: [
+    //     'assets/js/script.js'
+    //     ],
+    //     tasks: [
+    //     'uglify'
+    //     ]
+    // }
     },
   });
 
@@ -50,7 +62,7 @@ module.exports = function(grunt) {
 
   // Default task(s).
   grunt.registerTask('default', [
-  	'uglify',
+  	//g'uglify',
   	'sass',
   	'watch'
   	]);
